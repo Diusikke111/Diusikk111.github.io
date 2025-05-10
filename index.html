@@ -15,11 +15,6 @@
       display: inline-block;
       max-width: 700px;
     }
-    img {
-      border-radius: 10px;
-      margin: 20px 0;
-      max-width: 100%;
-    }
     .contenido-extra {
       display: none;
       margin-top: 20px;
@@ -52,11 +47,42 @@
       font-size: 18px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       transition: background-color 0.3s ease, transform 0.3s ease;
+      font-weight: bold;
+      text-transform: uppercase;
     }
 
-    button:hover { background-color: #b32d58; transform: scale(1.1); }
-    button:active { background-color: #9b2443; }
-    button:focus { outline: none; }
+    button:hover { 
+      background-color: #b32d58; 
+      transform: scale(1.1); 
+    }
+
+    button:active { 
+      background-color: #9b2443; 
+    }
+
+    button:focus { 
+      outline: none; 
+    }
+
+    /* Estilo específico para el segundo botón */
+    .boton-poema {
+      background-color: #4CAF50; /* Verde */
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      border-radius: 30px;
+      padding: 15px 40px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .boton-poema:hover {
+      background-color: #45a049; /* Verde más oscuro */
+      transform: scale(1.1);
+    }
+
+    .boton-poema:active {
+      background-color: #3c8c3c;
+    }
   </style>
 </head>
 <body>
@@ -67,26 +93,57 @@
     <p><em>Gracias por existir, por tu linda sonrisa y por tu luz que me ilumina.</em></p>
     <p>Con todo mi cariño,<br><strong>Tu postecito 💖</strong></p>
 
-    <!-- Contenido que aparece al presionar el botón (Poema de "Te amo demasiado") -->
+    <!-- Contenido que aparece al presionar el primer botón -->
     <div id="contenido1" class="contenido-extra">
       <img src="https://i.imgur.com/spXLrVj.jpeg" alt="Tu foto hermosa" width="250">
       <p class="frase">Te amo demasiado, más allá de lo que las palabras pueden sostener, más allá del tiempo y las dudas, como quien encuentra su razón de ser. Eres mi razón, la calma en mis tormentas, el suspiro que me recuerda que todo vale la pena si es contigo.</p>
     </div>
 
-    <!-- Botón para mostrar el poema con imagen -->
+    <!-- Botón para mostrar el primer contenido -->
     <div class="botones">
       <button onclick="mostrarContenido('contenido1')">Ver lo hermosa que eres ✨</button>
     </div>
 
-    <!-- Nuevo contenido con el poema "Te miro y entiendo" -->
+    <!-- Segundo contenido con el nuevo poema -->
     <div id="contenido2" class="contenido-extra">
-      <img src="https://i.imgur.com/Yy6gi7p.jpg" alt="Imagen cálida y suave" width="250">
-      <p class="frase">Te amo demasiado, más allá de lo que las palabras pueden sostener, más allá del tiempo y las dudas, como quien encuentra su razón de ser. Eres mi razón, la calma en mis tormentas, el suspiro que me recuerda que todo vale la pena si es contigo.</p>
+      <p class="frase">
+        Contigo, la vida tiene color, <br>
+        como un cielo pintado en mil tonos, <br>
+        donde cada amanecer es más brillante, <br>
+        y cada estrella parece cantar tu nombre. <br>
+        Eres la luz que da sentido a mis días, <br>
+        el sol que ilumina mi caminar, <br>
+        y la luna que me cuida mientras sueño.<br><br>
+
+        Contigo, cada instante es mágico, <br>
+        como si el tiempo se detuviera <br>
+        solo para dejarnos disfrutar <br>
+        de lo que somos, de lo que sentimos. <br>
+        Junto a ti, las palabras se quedan cortas, <br>
+        y los gestos no alcanzan <br>
+        para describir todo lo que mi corazón lleva <br>
+        desde el primer día que te vi.<br><br>
+
+        Eres mi razón de reír en los días grises, <br>
+        el refugio que me da calma <br>
+        cuando todo parece desmoronarse. <br>
+        Eres el abrazo que necesito, <br>
+        el pensamiento que nunca deja de estar, <br>
+        la sonrisa que me devuelve la esperanza <br>
+        cuando el mundo parece oscuro.<br><br>
+
+        Contigo, la vida no es solo vivir, <br>
+        es aprender a soñar, a amar, a crecer. <br>
+        Eres mi vida, mi refugio, mi todo, <br>
+        y a tu lado, cada día tiene más sentido. <br>
+        Gracias por ser la razón de mi amor, <br>
+        por ser mi hogar, por ser tú.
+      </p>
     </div>
 
-    <!-- Botón para mostrar el poema y la imagen cálida -->
+    <!-- Botón para mostrar el poema sin imagen -->
     <div class="botones">
-      <button onclick="mostrarContenido('contenido2')">Mi refugio, mi razón 💖</button>
+      <button class="boton-poema" onclick="mostrarContenido('contenido2')">Mostrar Poema!</button>
     </div>
 
   </div>
