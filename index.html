@@ -149,6 +149,15 @@
   </div>
 
   <script>
+    // Ocultar todos los contenidos al cargar la página
+    document.addEventListener("DOMContentLoaded", function() {
+      const contenidos = document.querySelectorAll('.contenido-extra');
+      contenidos.forEach(function(contenido) {
+        contenido.style.display = 'none';
+      });
+    });
+
+    // Función para mostrar el contenido al presionar el botón
     function mostrarContenido(id) {
       // Ocultar todos los contenidos
       const contenidos = document.querySelectorAll('.contenido-extra');
