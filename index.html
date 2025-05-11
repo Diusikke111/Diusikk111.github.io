@@ -4,11 +4,41 @@
 <head>
   <meta charset="UTF-8">
   <title>Para ti mi niña Hermosa 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
   <style>
-    body { background: #fff0f5; font-family: 'Segoe UI', sans-serif; text-align: center; padding: 50px; color: #333; }
-    h1, h2 { text-align: center; }
-    h1 { color: #d6336c; }
-    h2 { color: #d6336c; margin-bottom: 5px; }
+    body {
+      background: #fff0f5;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 50px;
+      color: #333;
+    }
+
+    h1 {
+      color: #d6336c;
+    }
+
+    .nombre-maria {
+      font-family: 'Great Vibes', cursive;
+      font-size: 48px;
+      color: #d6336c;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      margin-bottom: 10px;
+      animation: aparecerMaria 1.5s ease forwards;
+      opacity: 0;
+    }
+
+    @keyframes aparecerMaria {
+      from {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
     .tarjeta {
       background: white;
       padding: 30px;
@@ -17,6 +47,7 @@
       display: inline-block;
       max-width: 700px;
     }
+
     .contenido-extra {
       display: none;
       margin-top: 20px;
@@ -27,15 +58,18 @@
       gap: 20px;
       flex-wrap: wrap;
     }
+
     .frase {
       font-size: 18px;
       color: #b03060;
       max-width: 300px;
     }
+
     @keyframes aparecer {
       from { opacity: 0; transform: scale(0.9); }
       to { opacity: 1; transform: scale(1); }
     }
+
     button {
       margin: 10px;
       padding: 15px 30px;
@@ -50,16 +84,20 @@
       font-weight: bold;
       text-transform: uppercase;
     }
-    button:hover { 
-      background-color: #b32d58; 
-      transform: scale(1.1); 
+
+    button:hover {
+      background-color: #b32d58;
+      transform: scale(1.1);
     }
-    button:active { 
-      background-color: #9b2443; 
+
+    button:active {
+      background-color: #9b2443;
     }
-    button:focus { 
-      outline: none; 
+
+    button:focus {
+      outline: none;
     }
+
     .boton-poema {
       background-color: #d6336c;
       color: white;
@@ -69,61 +107,68 @@
       padding: 15px 40px;
       transition: background-color 0.3s ease, transform 0.3s ease;
     }
+
     .boton-poema:hover {
       background-color: #b32d58;
       transform: scale(1.1);
     }
+
     .boton-poema:active {
       background-color: #9b2443;
     }
 
-    .corazon-hover {
+    /* Efecto hover sobre el corazón para mostrar "Te amo" */
+    .corazon-container {
       position: relative;
       display: inline-block;
-      cursor: pointer;
-      margin: 20px 0;
     }
 
-    .corazon-hover img {
-      width: 200px;
-      border-radius: 10px;
-      transition: transform 0.3s ease;
-    }
-
-    .corazon-hover:hover img {
-      transform: scale(1.05);
-    }
-
-    .mensaje-amor {
+    .mensaje-te-amo {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       font-size: 24px;
       color: white;
+      font-weight: bold;
       background-color: rgba(214, 51, 108, 0.8);
       padding: 10px 20px;
       border-radius: 15px;
-      opacity: 0;
-      transition: opacity 0.3s ease;
+      display: none;
       pointer-events: none;
-      font-weight: bold;
+      opacity: 0;
+      animation: animarTeAmo 1.5s ease forwards;
     }
 
-    .corazon-hover:hover .mensaje-amor {
-      opacity: 1;
+    @keyframes animarTeAmo {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+      }
+      50% {
+        opacity: 0.8;
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+      100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+
+    .corazon-container:hover .mensaje-te-amo {
+      display: block;
     }
   </style>
 </head>
 <body>
   <div class="tarjeta">
-    <h2>❤️ María ❤️</h2>
+    <h2 class="nombre-maria">❤️ María ❤️</h2>
     <h1>Para mi enanita que hace latir mi corazón 💘</h1>
     <p>Esta página la hice pensando en ti, con todo mi amor 🥰.</p>
 
-    <div class="corazon-hover">
+    <div class="corazon-container">
       <img src="https://media.istockphoto.com/id/1128400054/es/vector/coraz%C3%B3n-s%C3%ADmbolo-del-amor-y-d%C3%ADa-de-san-valent%C3%ADn-icono-de-plano-rojo-aislado-sobre-fondo.jpg?s=612x612&w=0&k=20&c=0sbuvDB3OWKtkxAVCL88CDwTAKXGlaHH6vrelTEuxGE=" alt="Corazón símbolo del amor y Día de San Valentín">
-      <span class="mensaje-amor">Te amo 💖</span>
+      <div class="mensaje-te-amo">Te amo ❤️</div>
     </div>
 
     <p><em>Gracias por existir, por tu linda sonrisa y por tu luz que me ilumina, ¡Te amo!.</em></p>
@@ -131,7 +176,7 @@
 
     <div id="contenido1" class="contenido-extra">
       <img src="https://i.imgur.com/spXLrVj.jpeg" alt="Tu foto hermosa" width="250">
-      <p class="frase">Te amo demasiado, más allá de lo que las palabras pueden sostener, más allá del tiempo y las dudas, como quien encuentra su razón de ser...</p>
+      <p class="frase">Te amo demasiado, más allá de lo que las palabras pueden sostener, más allá del tiempo y las dudas, como quien encuentra su razón de ser. Eres mi razón, la calma en mis tormentas, el suspiro que me recuerda que todo vale la pena si es contigo.</p>
     </div>
 
     <div class="botones">
@@ -141,7 +186,36 @@
     <div id="contenido2" class="contenido-extra">
       <p class="frase">
         Contigo, la vida tiene color, <br>
-        ... (el resto del poema aquí) ...
+        como un cielo pintado en mil tonos, <br>
+        donde cada amanecer es más brillante, <br>
+        y cada estrella parece cantar tu nombre. <br>
+        Eres la luz que da sentido a mis días, <br>
+        el sol que ilumina mi caminar, <br>
+        y la luna que me cuida mientras sueño.<br><br>
+
+        Contigo, cada instante es mágico, <br>
+        como si el tiempo se detuviera <br>
+        solo para dejarnos disfrutar <br>
+        de lo que somos, de lo que sentimos. <br>
+        Junto a ti, las palabras se quedan cortas, <br>
+        y los gestos no alcanzan <br>
+        para describir todo lo que mi corazón lleva <br>
+        desde el primer día que te vi.<br><br>
+
+        Eres mi razón de reír en los días grises, <br>
+        el refugio que me da calma <br>
+        cuando todo parece desmoronarse. <br>
+        Eres el abrazo que necesito, <br>
+        el pensamiento que nunca deja de estar, <br>
+        la sonrisa que me devuelve la esperanza <br>
+        cuando el mundo parece oscuro.<br><br>
+
+        Contigo, la vida no es solo vivir, <br>
+        es aprender a soñar, a amar, a crecer. <br>
+        Eres mi vida, mi refugio, mi todo, <br>
+        y a tu lado, cada día tiene más sentido. <br>
+        Gracias por ser la razón de mi amor, <br>
+        por ser mi hogar, por ser tú.
       </p>
     </div>
 
@@ -170,6 +244,7 @@
   </script>
 </body>
 </html>
+
 
 
 
