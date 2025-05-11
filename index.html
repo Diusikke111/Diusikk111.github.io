@@ -16,7 +16,7 @@
       max-width: 700px;
     }
     .contenido-extra {
-      display: none; /* Aseguramos que los contenidos estén ocultos al inicio */
+      display: none;
       margin-top: 20px;
       animation: aparecer 0.5s ease;
       display: flex;
@@ -30,17 +30,15 @@
       color: #b03060;
       max-width: 300px;
     }
-
     @keyframes aparecer {
       from { opacity: 0; transform: scale(0.9); }
       to { opacity: 1; transform: scale(1); }
     }
-
     button {
       margin: 10px;
       padding: 15px 30px;
       cursor: pointer;
-      background-color: #d6336c; /* Rojo */
+      background-color: #d6336c;
       color: white;
       border: none;
       border-radius: 25px;
@@ -50,23 +48,18 @@
       font-weight: bold;
       text-transform: uppercase;
     }
-
     button:hover { 
       background-color: #b32d58; 
       transform: scale(1.1); 
     }
-
     button:active { 
       background-color: #9b2443; 
     }
-
     button:focus { 
       outline: none; 
     }
-
-    /* Estilo específico para el segundo botón (cambiado al mismo color que el primero) */
     .boton-poema {
-      background-color: #d6336c; /* Rojo */
+      background-color: #d6336c;
       color: white;
       font-size: 20px;
       font-weight: bold;
@@ -74,37 +67,76 @@
       padding: 15px 40px;
       transition: background-color 0.3s ease, transform 0.3s ease;
     }
-
     .boton-poema:hover {
-      background-color: #b32d58; /* Rojo más oscuro */
+      background-color: #b32d58;
       transform: scale(1.1);
     }
-
     .boton-poema:active {
       background-color: #9b2443;
+    }
+
+    /* NUEVO: Estilos para efecto hover en imagen del corazón */
+    .corazon-hover {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      margin: 20px 0;
+    }
+
+    .corazon-hover img {
+      width: 200px;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .corazon-hover:hover img {
+      transform: scale(1.05);
+    }
+
+    .mensaje-amor {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 24px;
+      color: white;
+      background-color: rgba(214, 51, 108, 0.8);
+      padding: 10px 20px;
+      border-radius: 15px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      font-weight: bold;
+    }
+
+    .corazon-hover:hover .mensaje-amor {
+      opacity: 1;
     }
   </style>
 </head>
 <body>
   <div class="tarjeta">
-    <h1>Para la niña hermosa que hace latir mi corazón 💘</h1>
+    <h1>Para mi enanita que hace latir mi corazón 💘</h1>
     <p>Esta página la hice pensando en ti, con todo mi amor 🥰.</p>
-    <img src="https://media.istockphoto.com/id/1128400054/es/vector/coraz%C3%B3n-s%C3%ADmbolo-del-amor-y-d%C3%ADa-de-san-valent%C3%ADn-icono-de-plano-rojo-aislado-sobre-fondo.jpg?s=612x612&w=0&k=20&c=0sbuvDB3OWKtkxAVCL88CDwTAKXGlaHH6vrelTEuxGE=" alt="Corazón símbolo del amor y Día de San Valentín">
+
+    <!-- NUEVO: Imagen con mensaje al pasar el cursor -->
+    <div class="corazon-hover">
+      <img src="https://media.istockphoto.com/id/1128400054/es/vector/coraz%C3%B3n-s%C3%ADmbolo-del-amor-y-d%C3%ADa-de-san-valent%C3%ADn-icono-de-plano-rojo-aislado-sobre-fondo.jpg?s=612x612&w=0&k=20&c=0sbuvDB3OWKtkxAVCL88CDwTAKXGlaHH6vrelTEuxGE=" alt="Corazón símbolo del amor y Día de San Valentín">
+      <span class="mensaje-amor">Te amo 💖</span>
+    </div>
+
     <p><em>Gracias por existir, por tu linda sonrisa y por tu luz que me ilumina, ¡Te amo!.</em></p>
     <p>Con todo mi cariño,<br><strong>Tu postecito 💖</strong></p>
 
-    <!-- Contenido que aparece al presionar el primer botón -->
     <div id="contenido1" class="contenido-extra">
       <img src="https://i.imgur.com/spXLrVj.jpeg" alt="Tu foto hermosa" width="250">
       <p class="frase">Te amo demasiado, más allá de lo que las palabras pueden sostener, más allá del tiempo y las dudas, como quien encuentra su razón de ser. Eres mi razón, la calma en mis tormentas, el suspiro que me recuerda que todo vale la pena si es contigo.</p>
     </div>
 
-    <!-- Botón para mostrar el primer contenido -->
     <div class="botones">
       <button onclick="mostrarContenido('contenido1')">Ver lo hermosa que eres ✨</button>
     </div>
 
-    <!-- Segundo contenido con el nuevo poema -->
     <div id="contenido2" class="contenido-extra">
       <p class="frase">
         Contigo, la vida tiene color, <br>
@@ -141,15 +173,12 @@
       </p>
     </div>
 
-    <!-- Botón para mostrar el poema sin imagen -->
     <div class="botones">
-      <button class="boton-poema" onclick="mostrarContenido('contenido2')">Mostrar Poema!</button>
+      <button class="boton-poema" onclick="mostrarContenido('contenido2')">Mostrar Poema 💌​</button>
     </div>
-
   </div>
 
   <script>
-    // Ocultar todos los contenidos al cargar la página
     document.addEventListener("DOMContentLoaded", function() {
       const contenidos = document.querySelectorAll('.contenido-extra');
       contenidos.forEach(function(contenido) {
@@ -157,15 +186,12 @@
       });
     });
 
-    // Función para mostrar el contenido al presionar el botón
     function mostrarContenido(id) {
-      // Ocultar todos los contenidos
       const contenidos = document.querySelectorAll('.contenido-extra');
       contenidos.forEach(function(contenido) {
         contenido.style.display = 'none';
       });
 
-      // Mostrar el contenido seleccionado
       const contenido = document.getElementById(id);
       contenido.style.display = 'flex';
     }
